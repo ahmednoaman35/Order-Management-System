@@ -9,8 +9,8 @@ namespace ServiesAbstractions
 {
     public interface IUserService
     {
-        Task RegisterAsync(UserRegisterDto dto);
-        Task<string> LoginAsync(LoginDto dto);  // returns JWT token
+        public Task<UserResultDto> RegisterAsync(UserRegisterDto dto);
+        public Task<UserResultDto>  LoginAsync(LoginDto dto);  // returns JWT token
 
     }
 }

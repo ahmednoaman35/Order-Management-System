@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ServiesAbstractions
 {
-    internal interface iProductService
+    public interface iProductService
     {
         Task<IEnumerable<ProductDto>> GetAllProductsAsync();
         Task<ProductDto> GetProductByIdAsync(int id);

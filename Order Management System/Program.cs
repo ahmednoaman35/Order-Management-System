@@ -1,6 +1,9 @@
 
 using Microsoft.EntityFrameworkCore;
 using Presistence.Data;
+using Servies;
+using ServiesAbstractions;
+using Sheared;
 
 namespace Order_Management_System
 {
@@ -9,6 +12,8 @@ namespace Order_Management_System
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+          builder.Services.AddScoped<IServieceManger, ServiceManger>();
 
             builder.Services.AddDbContext<ordermangmentDb>(options =>
               options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
