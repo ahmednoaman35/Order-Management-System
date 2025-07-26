@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using Presistence.Data;
+
 namespace Order_Management_System
 {
     public class Program
@@ -6,6 +9,9 @@ namespace Order_Management_System
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<ordermangmentDb>(options =>
+              options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
 
